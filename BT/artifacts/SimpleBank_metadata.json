@@ -1,0 +1,228 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Deposited",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "Withdrawn",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastDepositTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"author": "@notice Deposit, withdraw and check balance for the account owner",
+			"kind": "dev",
+			"methods": {
+				"deposit()": {
+					"details": "Emits Deposited event"
+				},
+				"transferOwnership(address)": {
+					"params": {
+						"newOwner": "Address of the new owner"
+					}
+				},
+				"withdraw(uint256)": {
+					"details": "Only owner can call. Uses nonReentrant guard and checks-effects-interactions pattern.",
+					"params": {
+						"amount": "Amount in wei to withdraw"
+					}
+				}
+			},
+			"title": "SimpleBank - a single-customer bank account contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"deposit()": {
+					"notice": "Deposit ether into the contract"
+				},
+				"getBalance()": {
+					"notice": "Returns current contract (account) balance in wei"
+				},
+				"transferOwnership(address)": {
+					"notice": "Allows owner to transfer ownership to a new owner"
+				},
+				"withdraw(uint256)": {
+					"notice": "Withdraw `amount` wei to the owner address"
+				},
+				"withdrawAll()": {
+					"notice": "Withdraw entire contract balance to owner"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"SimpleBank.sol": "SimpleBank"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"SimpleBank.sol": {
+			"keccak256": "0x5b9621ee8c8efa31484cac93ea66ec8e8fe921450897c3c0a0ca2c674727805a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fa674fc9a643c0aecb5e0877576631ee7cb9aac43196b1104296c5fdd4de5ebd",
+				"dweb:/ipfs/QmXjLDLB6ax98i7tSoVqup9uydBNGiYsTnFSnpgMAEJ3tH"
+			]
+		}
+	},
+	"version": 1
+}
